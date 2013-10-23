@@ -15,3 +15,20 @@ http://fredhq.com/projects/roundabout
 
 THANKS
 - CraftyShadow (Ivan Tanev) - https://github.com/CraftyShadow - for Responsive/Autoplay fix
+
+=======================
+
+
+Added swipe function for mobile users. Must include these adddon files:
+
+	    <script src="javascripts/jquery.event.swipe.js"></script>
+	    <script src="javascripts/jquery.event.swipe.ios6fix.js"></script>	
+
+
+Usage example:
+
+
+			app.el['price'].roundabout({
+				swipe: true,
+				swipeVert: false
+			});

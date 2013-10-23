@@ -91,6 +91,8 @@
 		autoplayCallback: function() {},
 		autoplayInitialDelay: 0,
 		enableDrag: false,
+		swipe: false,
+		swipeVert: false,
 		dropDuration: 600,
 		dropEasing: "swing",
 		dropAnimateTo: "nearest",
@@ -253,6 +255,26 @@
 								methods.startAutoplay.apply(self);
 							});
 					}
+
+					// bind previous buttons
+					if (settings.swipe) {
+				        var nextEvent = settings.swipeVert ? 'swipeUp.roundabout' : 'swipeLeft.roundabout swipeleft.roundabout';
+				        var prevEvent = settings.swipeVert ? 'swipeDown.roundabout' : 'swipeRight.roundabout swiperight.roundabout';
+						self
+					        .bind(nextEvent, function() {	
+								if (!self.data("roundabout").animating) {
+									methods.animateToNextChild.apply(self, [self.data("roundabout").btnNextCallback]);
+								}
+								return false;
+					        })
+					        .bind(prevEvent, function() {	
+								if (!self.data("roundabout").animating) {
+									methods.animateToPreviousChild.apply(self, [self.data("roundabout").btnPrevCallback]);
+								}
+								return false;
+					        });
+					}
+
 
 					// drag and drop
 					if (settings.enableDrag) {

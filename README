@@ -21,14 +21,14 @@ THANKS
 
 Added swipe function for mobile users. Must include these adddon files:
 
-	    <script src="javascripts/jquery.event.swipe.js"></script>
-	    <script src="javascripts/jquery.event.swipe.ios6fix.js"></script>	
+	<script src="javascripts/jquery.event.swipe.js"></script>
+	<script src="javascripts/jquery.event.swipe.ios6fix.js"></script>	
 
 
 Usage example:
 
 
-			app.el['price'].roundabout({
-				swipe: true,
-				swipeVert: false
-			});
+	app.el['price'].roundabout({
+		swipe: true,
+		swipeVert: false
+	});
